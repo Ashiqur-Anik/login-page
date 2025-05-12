@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+        .container.active #toggle-panel::before {
+            left: 50%;
+        }
+
+        .container.active #toggle-signup {
+            left: -50%;
+            transition: 1s;
+        }
+
+        .container.active #toggle-login {
+            right: 0%;
+            transition: 1s;
+        }
+
+        .container.active #signUp-box {
+            right: 50%;
+            visibility: visible;
+            transition: 1s;
+            transition-delay: 0.6s;
+        }
+
+        .container.active #login-box {
+            right: 50%;
+            visibility: hidden;
+            transition: 0.5s;
+        }
+
+        @media screen and (max-width:640px) {
+            .container.active #toggle-panel::before {
+                top: 75%;
+                left: 0;
+            }
+
+            .container.active #toggle-signup {
+                left: 0;
+                top: -30%;
+            }
+
+            .container.active #toggle-login {
+                bottom: -3%;
+            }
+            .container.active #login-box {
+                bottom: 30%;
+                right: 0;
+            }
+            .container.active #signUp-box {
+            right: 0; 
+            bottom: 12%;
+        }
+            
+            
+
+        }
+    </style>
+
+</head>
+
+<body class="flex justify-center items-center h-screen m-2">
+    <div
+        class="container md:w-[850px] md:h-[550px] h-full lg:m-0 md:m-10  bg-white relative rounded-3xl border-2 border-gray-200 overflow-hidden">
+        <div id="login-box"
+            class="absolute sm:right-0 bottom-0  sm:w-6/12 w-full sm:h-full h-[70%]  flex justify-center items-center text-center duration-[1s] delay-[0.6s]">
+            <form class="w-full p-10" action="">
+                <h1 class="md:text-4xl text-3xl font-bold">Login</h1>
+                <div class="my-5 relative">
+                    <input class="w-full py-2 pl-3 pr-10 rounded-lg outline-none border-2 border-gray-400 text-lg"
+                        type="email" placeholder="Email">
+                    <i class='bx bxs-envelope absolute right-3 top-3 text-xl'></i>
+                </div>
+                <div class="relative">
+                    <input class="w-full py-2 pl-3 pr-10 rounded-lg outline-none border-2 border-gray-400 text-lg "
+                        type="password" placeholder="Password">
+                    <i class='bx bxs-lock-alt absolute right-3 top-3 text-xl'></i>
+                </div>
+                <div>
+                    <p class="text-gray-400 cursor-pointer  hover:underline hover:text-indigo-500 my-3">forgot password
+                    </p>
+                    <button class="md:mt-2 btn bg-[#7494ec] w-full py-4 text-base">Login</button>
+                    <p class="my-2 text-gray-400">or login with social platforms</p>
+                    <div class="md:text-3xl text-2xl mt-2 flex justify-center">
+                        <i
+                            class='bx bxl-google border-2 border-gray-300 bg-gray-50 cursor-pointer m-1 p-2 rounded-md hover:bg-slate-200 transition'></i>
+                        <i
+                            class='bx bxl-facebook-circle border-2 border-gray-300 bg-gray-50 cursor-pointer m-1 p-2 rounded-md hover:bg-slate-200 transition'></i>
+                        <i
+                            class='bx bxl-github border-2 border-gray-300 bg-gray-50 cursor-pointer m-1 p-2 rounded-md hover:bg-slate-200 transition'></i>
+                        <i
+                            class='bx bxl-linkedin border-2 border-gray-300 bg-gray-50 cursor-pointer m-1 p-2 rounded-md hover:bg-slate-200 transition'></i>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div id="signUp-box"
+            class="absolute right-0 sm:w-6/12 w-full h-full flex justify-center items-center text-center invisible">
+            <form class="w-full p-10" action="">
+                <h1 class="md:text-4xl text-3xl font-bold">SignUp</h1>
+                <div class="my-5 relative">
+                    <input class="w-full py-2 pl-3 pr-10 rounded-lg outline-none border-2 border-gray-400 text-lg"
+                        type="text" placeholder="UserName">
+                    <i class='bx bxs-user absolute right-3 top-4 text-xl'></i>
+
+                </div>
+                <div class="my-5 relative">
+                    <input class="w-full py-2 pl-3 pr-10 rounded-lg outline-none border-2 border-gray-400 text-lg"
+                        type="email" placeholder="Email">
+                    <i class='bx bxs-envelope absolute right-3 top-4 text-xl'></i>
+                </div>
+                <div class="relative">
+                    <input class="w-full py-2 pl-3 pr-10 rounded-lg outline-none border-2 border-gray-400 text-lg "
+                        type="password" placeholder="Password">
+                    <i class='bx bxs-lock-alt absolute right-3 top-4 text-xl'></i>
+                </div>
+                <div>
+                    <p class="text-gray-400 cursor-pointer  hover:underline hover:text-indigo-500 my-3">forgot password
+                    </p>
+                    <button class="md:mt-2 btn bg-[#7494ec] w-full py-4 text-base">SignUp</button>
+                    <p class="my-2 text-gray-400">or login with social platforms</p>
+                    <div class="md:text-3xl text-2xl mt-2 flex justify-center">
+                        <i
+                            class='bx bxl-google border-2 border-gray-300 bg-gray-50 cursor-pointer m-1 p-2 rounded-md hover:bg-slate-200 transition'></i>
+                        <i
+                            class='bx bxl-facebook-circle border-2 border-gray-300 bg-gray-50 cursor-pointer m-1 p-2 rounded-md hover:bg-slate-200 transition'></i>
+                        <i
+                            class='bx bxl-github border-2 border-gray-300 bg-gray-50 cursor-pointer m-1 p-2 rounded-md hover:bg-slate-200 transition'></i>
+                        <i
+                            class='bx bxl-linkedin border-2 border-gray-300 bg-gray-50 cursor-pointer m-1 p-2 rounded-md hover:bg-slate-200 transition'></i>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div id="toggle-panel"
+            class="before:content-[''] before:absolute sm:before:w-[250%] before:w-[100%] before:h-full  before:bg-[#7494ec] sm:before:left-[-200%] before:left-0 sm:before:top-0 before:top-[-400px] sm:before:rounded-[150px before:rounded-[100px]  before:transition-all before:duration-[1.5s]   ">
+            <div id="toggle-signup"
+                class="absolute sm:w-3/6 sm:h-full flex flex-col justify-center items-center left-0 duration-[1s] w-[100%] h-[30%] top-0">
+                <h1 class="md:text-4xl text-2xl font-bold">Hello, Welcome!</h1>
+                <p class="md:text-lg text-base my-3">don't have an account</p>
+                <button id="signup-btn"
+                    class="btn w-4/12 text-base bg-transparent border-2 border-white">SignUp</button>
+            </div>
+            <div id="toggle-login"
+                class="absolute sm:w-3/6 sm:h-full flex flex-col justify-center items-center sm:right-[-50%] sm:top-0 w-[100%] h-[30%] bottom-[-30%] duration-[1s]">
+                <h1 class="md:text-4xl text-2xl font-bold">Welcome Back!</h1>
+                <p class="md:text-lg text-base my-2">Already have an account</p>
+                <button id="login-btn" class="btn w-4/12 text-base bg-transparent border-2 border-white">login</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const container = document.querySelector('.container');
+        const login = document.getElementById('login-btn')
+        const signUp = document.getElementById('signup-btn');
+
+        signUp.addEventListener('click', () => {
+            container.classList.add('active')
+        })
+        login.addEventListener('click', () => {
+            container.classList.remove('active')
+        })
+
+    </script>
+</body>
+
+</html>
